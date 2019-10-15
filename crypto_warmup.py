@@ -21,7 +21,7 @@ ciphers = ["aes-128-cbc",
 "des-ede-ofb",
 "des-ecb",
 "des-ede3-ofb",]
-
+#Iterate through the list
 for x in ciphers:
     os.system(openssl x black)
     os.system(openssl x color)

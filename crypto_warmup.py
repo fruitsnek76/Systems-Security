@@ -24,9 +24,15 @@ ciphers = ["aes-128-cbc",
 #Iterate through the list
 def check(color1,color2):
     for x in ciphers:
-        #os.system(openssl x black)
+        pwd = "Champlain"
         #dd conv=notrunc if=/color.bmp of=color2.bmp bs=1 count=54
-        print("[+]", x)
-        os.system(openssl dd conv=notrunc if=color1 of=color1.bmp bs=1 count=54)
-        os.system(openssl dd conv=notrunc if=color2 of=color2.bmp bs=1 count=54)
+        print("[+] Encrypted with ", x)
+        os.system(openssl enc x -k pwd -in color1 -out color1)
+        os.system(openssl enc  x - k pwd - in color1 - out color1)
+        os.system( dd conv=notrunc if=color1 of=color1.bmp bs=1 count=54)
+        os.system( dd conv=notrunc if=color2 of=color2.bmp bs=1 count=54)
+        """
+        cp bw_html > "/var/www/html/black_enc.html"
+        cp color_html > "/var/www/html/color_enc.html"
+        """
         #os.system(openssl x color)

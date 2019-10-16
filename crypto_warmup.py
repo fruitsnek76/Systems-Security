@@ -27,10 +27,17 @@ def check(color1,color2):
         pwd = "Champlain"
         #dd conv=notrunc if=/color.bmp of=color2.bmp bs=1 count=54
         print("[+] Encrypted with ", x)
+<<<<<<< HEAD
         os.system("openssl enc x -k pwd -in color1 -out color1")
         os.system("openssl enc  x - k pwd - in color1 - out color")
         #os.system( dd conv=notrunc if=color1 of=color1.bmp bs=1 count=54)
         #os.system( dd conv=notrunc if=color2 of=color2.bmp bs=1 count=54)
+=======
+        os.system(openssl enc x -k pwd -in color1 -out color1)
+        os.system(openssl enc  x - k pwd - in color1 - out color1)
+        os.system( dd conv=notrunc if=color1 of=color1.bmp bs=1 count=54)
+        os.system( dd conv=notrunc if=color2 of=color2.bmp bs=1 count=54)
+>>>>>>> f4c1ac25157f697f24c45d0c55635773e9b8df35
         """
         cp bw_html > "/var/www/html/black_enc.html"
         cp color_html > "/var/www/html/color_enc.html"

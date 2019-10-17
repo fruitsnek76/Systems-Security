@@ -34,7 +34,8 @@ def check(color1,color2):
         os.system(dd)
         dd = f"dd conv=notrunc if={color2} of=color2.bmp bs=1 count=54)"
         os.system(dd)
-
+        os.system("cp bw_html > ""/var/www/html/black_enc.html")
+        os.system("cp color_html >" "/var/www/html/color_enc.html"")                                                    
         """
         cp bw_html > "/var/www/html/black_enc.html"
         cp color_html > "/var/www/html/color_enc.html"

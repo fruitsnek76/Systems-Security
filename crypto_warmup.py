@@ -25,7 +25,7 @@ ciphers = ["aes-128-cbc",
 def check(color1,color2):
     for x in ciphers:
         pwd = "Champlain"
-        print("[+] Encrypted with ", x)
+        print("[+] Encrypted with", x)
         ssl = f"openssl enc -{x} -k {pwd} -in {color1} -out final1"
         os.system(ssl)
         ssl = f"openssl enc -{x} -k {pwd} -in {color2} -out final2"

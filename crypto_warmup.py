@@ -26,13 +26,13 @@ def check(color1,color2):
     for x in ciphers:
         pwd = "Champlain"
         print("[+] Encrypted with ", x)
-        ssl = f"openssl enc {x} -k {pwd} -in {color1} -out color1"
+        ssl = f"openssl enc {x} -k {pwd} -in {color1} -out final1"
         os.system(ssl)
-        ssl = f"openssl enc {x} -k {pwd} -in {color2} -out color2"
+        ssl = f"openssl enc {x} -k {pwd} -in {color2} -out final2"
         os.system(ssl)
-        dd = f"dd conv=notrunc if={color1} of=color1.bmp bs=1 count=54)"
+        dd = f"dd conv=notrunc if=final1 of=color1.bmp bs=1 count=54)"
         os.system(dd)
-        dd = f"dd conv=notrunc if={color2} of=color2.bmp bs=1 count=54)"
+        dd = f"dd conv=notrunc if=final2 of=color2.bmp bs=1 count=54)"
         os.system(dd)
         os.system("cp bw_html > ""/var/www/html/black_enc.html")
         os.system("cp color_html >" "/var/www/html/color_enc.html"")                                                    

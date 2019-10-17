@@ -25,19 +25,24 @@ ciphers = ["aes-128-cbc",
 def check(color1,color2):
     for x in ciphers:
         pwd = "Champlain"
-        #dd conv=notrunc if=/color.bmp of=color2.bmp bs=1 count=54
         print("[+] Encrypted with ", x)
-        os.system("openssl enc x -k pwd -in color1 -out color1")
-        os.system("openssl enc  x - k pwd - in color1 - out color")
-        #os.system( dd conv=notrunc if=color1 of=color1.bmp bs=1 count=54)
-        #os.system( dd conv=notrunc if=color2 of=color2.bmp bs=1 count=54)
-        os.system(openssl enc x -k pwd -in color1 -out color1)
-        os.system(openssl enc  x - k pwd - in color1 - out color1)
-        os.system( dd conv=notrunc if=color1 of=color1.bmp bs=1 count=54)
-        os.system( dd conv=notrunc if=color2 of=color2.bmp bs=1 count=54)
+        ssl = f"openssl enc {x} -k {pwd} -in {color1} -out color1"
+        os.system(ssl)
+        ssl = f"openssl enc {x} -k {pwd} -in {color2} -out color2"
+        os.system(ssl)
+        dd = f"dd conv=notrunc if={color1} of=color1.bmp bs=1 count=54)"
+        os.system(dd)
+        dd = f"dd conv=notrunc if={color2} of=color2.bmp bs=1 count=54)"
+        os.system(dd)
 
         """
         cp bw_html > "/var/www/html/black_enc.html"
         cp color_html > "/var/www/html/color_enc.html"
+        #dd conv=notrunc if=/color.bmp of=color2.bmp bs=1 count=54
+        #os.system( dd conv=notrunc if=color1 of=color1.bmp bs=1 count=54)
+        #os.system( dd conv=notrunc if=color2 of=color2.bmp bs=1 count=54)
+        #os.system(openssl enc x -k pwd -in color1 -out color1)
+        #os.system(openssl enc  x - k pwd - in color1 - out color1)
         """
         #os.system(openssl x color)
+check(black,color)

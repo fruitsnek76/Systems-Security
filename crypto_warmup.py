@@ -30,12 +30,12 @@ def check(color1,color2):
         os.system(ssl)
         ssl = f"openssl enc -{x} -k {pwd} -in {color2} -out final2"
         os.system(ssl)
-        dd = f"dd conv=notrunc if=final1 of=color1.bmp bs=1 count=54)"
+        dd = f"dd conv=notrunc if=final1 of=color1.bmp bs=1 count=54"
         os.system(dd)
-        dd = f"dd conv=notrunc if=final2 of=color2.bmp bs=1 count=54)"
+        dd = f"dd conv=notrunc if=final2 of=color2.bmp bs=1 count=54"
         os.system(dd)
-        os.system("cp bw_html > ""/var/www/html/black_enc.html")
-        os.system("cp color_html >" "/var/www/html/color_enc.html"")                                                    
+        os.system("cp final1 "/var/www/html/black_enc.html")
+        os.system("cp final2 "/var/www/html/color_enc.html")                                                    
         """
         cp bw_html > "/var/www/html/black_enc.html"
         cp color_html > "/var/www/html/color_enc.html"

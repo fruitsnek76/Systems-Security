@@ -20,7 +20,10 @@ ciphers = ["aes-128-cbc",
 "aes-192-ecb",
 "des-ede-ofb",
 "des-ecb",
-"des-ede3-ofb",]
+"des-ede3-ofb",
+"seed-ecb",
+"seed-cfb",
+]
 #Iterate through the list
 def check(color1,color2):
     for x in ciphers:
@@ -34,16 +37,11 @@ def check(color1,color2):
         os.system(dd)
         dd = f"dd conv=notrunc if=final2 of=color2.bmp bs=1 count=54"
         os.system(dd)
-        os.system("cp final1 "/var/www/html/black_enc.html")
-        os.system("cp final2 "/var/www/html/color_enc.html")                                                    
-        """
-        cp bw_html > "/var/www/html/black_enc.html"
-        cp color_html > "/var/www/html/color_enc.html"
-        #dd conv=notrunc if=/color.bmp of=color2.bmp bs=1 count=54
-        #os.system( dd conv=notrunc if=color1 of=color1.bmp bs=1 count=54)
-        #os.system( dd conv=notrunc if=color2 of=color2.bmp bs=1 count=54)
-        #os.system(openssl enc x -k pwd -in color1 -out color1)
-        #os.system(openssl enc  x - k pwd - in color1 - out color1)
-        """
+        html = "<div><img src=final1</div>"
+        html2 = "<div><img src=final2</div>"
+        os.system(f"cp {html1} black_enc.html")
+        os.system(f"cp {html2} color_enc.html")
+        os.system("cp final1 /var/www/html/black_enc.html")
+        os.system("cp final2 /var/www/html/color_enc.html")
         #os.system(openssl x color)
 check(black,color)
